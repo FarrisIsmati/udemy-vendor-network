@@ -1,6 +1,7 @@
 resource "aws_internet_gateway" "aws-igw" {
   vpc_id = aws_vpc.aws-vpc.id
   tags = {
+        Name                = "${var.app_name}-igw"
         udemy                = ""
         vendor               = ""
         igw                  = ""
@@ -14,6 +15,7 @@ resource "aws_subnet" "private" {
   availability_zone = element(var.availability_zones, count.index)
 
   tags = {
+    Name                = "${var.app_name}-private"
     udemy                = ""
     vendor               = ""
     subnet               = ""
@@ -28,6 +30,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
+    Name                = "${var.app_name}-public"
     udemy                = ""
     vendor               = ""
     subnet               = ""
@@ -38,6 +41,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
+    Name                = "${var.app_name}-rt"
     udemy                = ""
     vendor               = ""
     rt                   = ""
