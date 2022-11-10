@@ -17,8 +17,8 @@ resource "aws_route" "public_rt_1" {
 }
 
 resource "aws_route_table_association" "public_rt_1" {
-  subnet_id      = aws_subnet.public_1
-  route_table_id = aws_route_table.public_rt_1
+  subnet_id      = aws_subnet.public_1.id
+  route_table_id = aws_route_table.public_rt_1.id
 }
 
 # Public RT 2
@@ -40,8 +40,8 @@ resource "aws_route" "public_rt_2" {
 }
 
 resource "aws_route_table_association" "public_rt_2" {
-  subnet_id      = aws_subnet.public_1
-  route_table_id = aws_route_table.public_rt_2
+  subnet_id      = aws_subnet.public_1.id
+  route_table_id = aws_route_table.public_rt_2.id
 }
 
 # Private RT 1
