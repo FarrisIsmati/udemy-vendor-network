@@ -1,4 +1,4 @@
-# Public RT's (same cidrblock so loop)
+# Public RT 1
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.aws-vpc.id
 
