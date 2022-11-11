@@ -21,7 +21,7 @@ resource "aws_route_table_association" "public_rt_1" {
   route_table_id = aws_route_table.public_rt_1.id
 }
 
-# Public RT 2
+# Public RT 2 
 resource "aws_route_table" "public_rt_2" {
   vpc_id = aws_vpc.aws-vpc.id
 
