@@ -1,4 +1,4 @@
-# https://dev.to/thnery/create-an-aws-ecs-cluster-using-terraform-g80 
+# https://dev.to/thnery/create-an-aws-ecs-cluster-using-terraform-g80
 
 terraform {
   required_providers {
