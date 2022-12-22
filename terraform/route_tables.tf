@@ -3,10 +3,8 @@ resource "aws_route_table" "public_rt_1" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    Name                = "${var.app_name}-public-1-rt"
-    udemy                = ""
-    vendor               = ""
-    rt                   = ""
+    name                = "${var.app_name}-public-1-rt"
+    environment         = var.app_environment
   }
 }
 
@@ -27,9 +25,7 @@ resource "aws_route_table" "public_rt_2" {
 
   tags = {
     Name                = "${var.app_name}-public-2-rt"
-    udemy                = ""
-    vendor               = ""
-    rt                   = ""
+    environment         = var.app_environment
   }
 }
 
@@ -49,17 +45,15 @@ resource "aws_route_table" "private_rt_1" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    Name                = "${var.app_name}-private-1-rt"
-    udemy                = ""
-    vendor               = ""
-    rt                   = ""
+    name                = "${var.app_name}-private-1-rt"
+    environment         = var.app_environment
   }
 }
 
 resource "aws_route" "private_rt_1" {
   route_table_id         = aws_route_table.private_rt_1.id
   destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id     = aws_nat_gateway.public_subnet_1.id
+  nat_gateway_id         = aws_nat_gateway.public_subnet_1.id
 }
 
 resource "aws_route_table_association" "private_rt_1" {
@@ -72,17 +66,15 @@ resource "aws_route_table" "private_rt_2" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    Name                = "${var.app_name}-private-2-rt"
-    udemy                = ""
-    vendor               = ""
-    rt                   = ""
+    name                = "${var.app_name}-private-2-rt"
+    environment         = var.app_environment
   }
 }
 
 resource "aws_route" "private_rt_2" {
   route_table_id         = aws_route_table.private_rt_2.id
   destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id     = aws_nat_gateway.public_subnet_2.id
+  nat_gateway_id         = aws_nat_gateway.public_subnet_2.id
 } 
 
 resource "aws_route_table_association" "private_rt_2" {

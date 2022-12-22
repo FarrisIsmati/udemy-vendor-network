@@ -1,3 +1,31 @@
-Costs money
+# Money
 NAT GATEWAY
 EIP
+
+# STEPS WHEN RECORDING DB
+
+SETUP
+0. Describe network, and CI/CD workflow
+(Note this is not a course to learn about AWS networking in depth but will cover it in a practical sense)
+(VPC -> Route Tables -> Subnets | attach IGW to RT | attach natgw to private RT | eip attach to IGW)
+(~~~NOTES~~~)
+1. Create github-oidc-terraform role
+2. Setup github repo + .gitignore
+3. Setup github actions
+(Store secrets)
+
+ACTIONS
+1. main.yml (Copy paste & describe code & state what needs to be replaced)
+
+TERRAFORM
+1. main.tf (quick)
+2. variables.tf (copy/paste show what to replace)
+3. vpc.tf (Create, check if created in AWS)
+4. subnets.tf (Create, check if created in AWS) (Public is subnet with RT that has a IGW private is one that does not)
+5. route table + igw (Create rt, then igw when needed)
+6. nat-gateways.tf (Create, see if attached to igw)
+(explain is needed for interent connectivity for private subnets)
+(prevents hosts on internet from initiating connections to these instances)
+7. eip.tf (Create, see if attached to igw) 
+(must assign an EIP if you want your instance to be reachable from the internet over IPV4)
+8. Our network is setup, now we can start creating resources that will be able to communicate with no issues
