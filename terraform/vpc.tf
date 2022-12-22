@@ -4,7 +4,7 @@ resource "aws_vpc" "aws-vpc" {
   enable_dns_hostnames  = true
   enable_dns_support    = true
   tags = { # Redefine tag game (name and env only)
-    name                = "${var.app_name}-vpc"
+    Name                = "${var.app_name}-vpc"
     environment         = var.app_environment
   }
 }

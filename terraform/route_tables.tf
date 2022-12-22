@@ -3,7 +3,7 @@ resource "aws_route_table" "public_rt_1" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    name                = "${var.app_name}-public-1-rt"
+    Name                = "${var.app_name}-public-1-rt"
     environment         = var.app_environment
   }
 }
@@ -45,7 +45,7 @@ resource "aws_route_table" "private_rt_1" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    name                = "${var.app_name}-private-1-rt"
+    Name                = "${var.app_name}-private-1-rt"
     environment         = var.app_environment
   }
 }
@@ -66,7 +66,7 @@ resource "aws_route_table" "private_rt_2" {
   vpc_id = aws_vpc.aws-vpc.id
 
   tags = {
-    name                = "${var.app_name}-private-2-rt"
+    Name                = "${var.app_name}-private-2-rt"
     environment         = var.app_environment
   }
 }
