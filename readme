@@ -9,7 +9,7 @@ SETUP
 (Note this is not a course to learn about AWS networking in depth but will cover it in a practical sense)
 (VPC -> Route Tables -> Subnets | attach IGW to RT | attach natgw to private RT | eip attach to IGW)
 (~~~NOTES~~~)
-1. Create github-oidc-terraform role
+1. Create github-oidc-terraform role (setup OPENID connect)
 2. Setup github repo + .gitignore
 3. Setup github actions
 (Store secrets)
