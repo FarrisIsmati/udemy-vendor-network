@@ -2,23 +2,17 @@
 resource "aws_route_table" "public_rt_1" {
   vpc_id = aws_vpc.aws-vpc.id
 
-  route {
-    destination_cidr_block = "0.0.0.0/0"
-    gateway_id             = aws_internet_gateway.aws-igw.id
-  }
-  
   tags = {
     Name                = "${var.app_name}-public-1-rt"
     environment         = var.app_environment
   }
 }
 
-# # Try using a route inisde public RT instead of separating it
-# resource "aws_route" "public_rt_1" {
-#   route_table_id         = aws_route_table.public_rt_1.id
-#   destination_cidr_block = "0.0.0.0/0"
-#   gateway_id             = aws_internet_gateway.aws-igw.id
-# }
+resource "aws_route" "public_rt_1" {
+  route_table_id         = aws_route_table.public_rt_1.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.aws-igw.id
+}
 
 resource "aws_route_table_association" "public_rt_1" {
   subnet_id      = aws_subnet.public_1.id
